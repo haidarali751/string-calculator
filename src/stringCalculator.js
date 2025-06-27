@@ -6,8 +6,20 @@ export function add(input) {
 
   if (input.startsWith("//")) {
     const delimiterSectionEnd = input.indexOf("\n");
-    const customDelimiter = input.slice(2, delimiterSectionEnd);
-    delimiterPattern = new RegExp(`[${customDelimiter}]`);
+    const delimiterLine = input.slice(2, delimiterSectionEnd);
+
+    if (delimiterLine.startsWith("[") && delimiterLine.endsWith("]")) {
+      delimiterPattern = new RegExp(
+        delimiterLine
+          .slice(1, -1)
+          .split("][")
+          .map((d) => `(${d})`)
+          .join("|")
+      );
+    } else {
+      delimiterPattern = new RegExp(`[${delimiterLine}]`);
+    }
+
     numbersPart = input.slice(delimiterSectionEnd + 1);
   }
 
