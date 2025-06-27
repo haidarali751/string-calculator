@@ -8,12 +8,12 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-console.log("Welcome to the String Calculator CLI");
+console.log('Welcome to the String Calculator CLI');
 console.log("Enter your input string (or 'exit' to quit):");
 
 rl.on('line', (line) => {
   if (line.trim().toLowerCase() === 'exit') {
-    console.log("Goodbye!");
+    console.log('Goodbye!');
     rl.close();
     return;
   }
