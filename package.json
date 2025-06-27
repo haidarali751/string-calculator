@@ -1,0 +1,23 @@
+{
+  "name": "string-calculator",
+  "version": "1.0.0",
+  "description": "TDD Kata: String Calculator implemented in JavaScript",
+  "main": "src/stringCalculator.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "TDD",
+    "Kata",
+    "StringCalculator",
+    "Jest",
+    "JavaScript"
+  ],
+  "author": "Haidar Shaikh",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
